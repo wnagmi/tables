@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boot.spring.mapper.CustomerMapper">
+  <resultMap id="BaseResultMap" type="boot.spring.domain.Customer">
+    <id column="id" property="id" />
+    <result column="name" property="name" />
+    <result column="age" property="age" />
+    <result column="gender" property="gender" />
+    <result column="tel" property="tel" />
+    <result column="qq" property="qq" />
+    <result column="job_id" property="job_id" />
+    <result column="source_id" property="source_id" />
+    <result column="seller_id" property="seller_id" />
+    <result column="inputUser_id" property="inputUser_id" />
+    <result column="inputTime" property="inputTime" />
+    <result column="status" property="status" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey">
+    delete from customer
+    where id = #{id}
+  </delete>
+  <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+    insert into customer (name, age, gender, tel, qq, job_id, source_id, seller_id, 
+      inputUser_id, inputTime, status)
+    values (#{name}, #{age}, #{gender}, #{tel}, #{qq}, #{job_id}, #{source_id}, #{seller_id}, 
+      #{inputUser_id}, #{inputTime}, #{status})
+  </insert>
+  <update id="updateByPrimaryKey">
+    update customer
+    set name = #{name},
+      age = #{age},
+      gender = #{gender},
+      tel = #{tel},
+      qq = #{qq},
+      job_id = #{job_id},
+      source_id = #{source_id},
+      seller_id = #{seller_id},
+      inputUser_id = #{inputUser_id},
+      inputTime = #{inputTime},
+      status = #{status}
+    where id = #{id}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap">
+    select id, name, age, gender, tel, qq, job_id, source_id, seller_id, inputUser_id, 
+    inputTime, status
+    from customer
+    where id = #{id}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, name, age, gender, tel, qq, job_id, source_id, seller_id, inputUser_id, 
+    inputTime, status
+    from customer
+  </select>
+</mapper>

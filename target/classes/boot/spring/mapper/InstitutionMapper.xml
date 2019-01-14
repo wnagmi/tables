@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boot.spring.mapper.InstitutionMapper">
+  <resultMap id="BaseResultMap" type="boot.spring.domain.Institution">
+    <id column="ID" property="ID" />
+    <result column="INST_ID" property="INST_ID" />
+    <result column="INST_NAME" property="INST_NAME" />
+    <result column="UP_INST_ID" property="UP_INST_ID" />
+    <result column="UP_INST_NAME" property="UP_INST_NAME" />
+    <result column="AREA_CD" property="AREA_CD" />
+    <result column="AREA_NAME" property="AREA_NAME" />
+    <result column="ZHZ_NAME" property="ZHZ_NAME" />
+    <result column="GROUP_TYPE" property="GROUP_TYPE" />
+    <result column="RPT_DATE" property="RPT_DATE" />
+    <result column="RPT_WEEK" property="RPT_WEEK" />
+    <result column="CXCK_SCORE" property="CXCK_SCORE" />
+    <result column="CXCK_JZ" property="CXCK_JZ" />
+    <result column="YXT_SCORE" property="YXT_SCORE" />
+    <result column="YXT_JZ" property="YXT_JZ" />
+    <result column="BXDL_SCORE" property="BXDL_SCORE" />
+    <result column="BXDL_JZ" property="BXDL_JZ" />
+    <result column="GRLC_SCORE" property="GRLC_SCORE" />
+    <result column="GRLC_JZ" property="GRLC_JZ" />
+    <result column="GJS_SCORE" property="GJS_SCORE" />
+    <result column="GJS_JZ" property="GJS_JZ" />
+    <result column="HJDT_SCORE" property="HJDT_SCORE" />
+    <result column="HJDT_JZ" property="HJDT_JZ" />
+    <result column="JJDT_SCORE" property="JJDT_SCORE" />
+    <result column="JJDT_JZ" property="JJDT_JZ" />
+    <result column="SJYH_KHXZ_SCORE" property="SJYH_KHXZ_SCORE" />
+    <result column="SJYH_KHXZ_JZ" property="SJYH_KHXZ_JZ" />
+    <result column="XYK_XZFKL_SCORE" property="XYK_XZFKL_SCORE" />
+    <result column="XYK_XZFKL_JZ" property="XYK_XZFKL_JZ" />
+    <result column="GSCK_SCORE" property="GSCK_SCORE" />
+    <result column="GSCK_JZ" property="GSCK_JZ" />
+    <result column="TOTAL_SCORE" property="TOTAL_SCORE" />
+    <result column="RANK" property="RANK" />
+    <result column="SEQ" property="SEQ" />
+    <result column="WLJR_DZZF_SCORE" property="WLJR_DZZF_SCORE" />
+    <result column="WLJR_DZZF_JZ" property="WLJR_DZZF_JZ" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey">
+    delete from tb_kmh_ez_chk_rpt
+    where ID = #{ID}
+  </delete>
+  <insert id="insert" keyProperty="ID" useGeneratedKeys="true">
+    insert into tb_kmh_ez_chk_rpt (INST_ID, INST_NAME, UP_INST_ID, UP_INST_NAME, AREA_CD, AREA_NAME, 
+      ZHZ_NAME, GROUP_TYPE, RPT_DATE, RPT_WEEK, CXCK_SCORE, CXCK_JZ, 
+      YXT_SCORE, YXT_JZ, BXDL_SCORE, BXDL_JZ, GRLC_SCORE, GRLC_JZ, 
+      GJS_SCORE, GJS_JZ, HJDT_SCORE, HJDT_JZ, JJDT_SCORE, JJDT_JZ, 
+      SJYH_KHXZ_SCORE, SJYH_KHXZ_JZ, XYK_XZFKL_SCORE, XYK_XZFKL_JZ, GSCK_SCORE, 
+      GSCK_JZ, TOTAL_SCORE, RANK, SEQ, WLJR_DZZF_SCORE, WLJR_DZZF_JZ
+      )
+    values (#{INST_ID}, #{INST_NAME}, #{UP_INST_ID}, #{UP_INST_NAME}, #{AREA_CD}, #{AREA_NAME}, 
+      #{ZHZ_NAME}, #{GROUP_TYPE}, #{RPT_DATE}, #{RPT_WEEK}, #{CXCK_SCORE}, #{CXCK_JZ}, 
+      #{YXT_SCORE}, #{YXT_JZ}, #{BXDL_SCORE}, #{BXDL_JZ}, #{GRLC_SCORE}, #{GRLC_JZ}, 
+      #{GJS_SCORE}, #{GJS_JZ}, #{HJDT_SCORE}, #{HJDT_JZ}, #{JJDT_SCORE}, #{JJDT_JZ}, 
+      #{SJYH_KHXZ_SCORE}, #{SJYH_KHXZ_JZ}, #{XYK_XZFKL_SCORE}, #{XYK_XZFKL_JZ}, #{GSCK_SCORE}, 
+      #{GSCK_JZ}, #{TOTAL_SCORE}, #{RANK}, #{SEQ}, #{WLJR_DZZF_SCORE}, #{WLJR_DZZF_JZ}
+      )
+  </insert>
+  <update id="updateByPrimaryKey">
+    update tb_kmh_ez_chk_rpt
+    set INST_ID = #{INST_ID},
+      INST_NAME = #{INST_NAME},
+      UP_INST_ID = #{UP_INST_ID},
+      UP_INST_NAME = #{UP_INST_NAME},
+      AREA_CD = #{AREA_CD},
+      AREA_NAME = #{AREA_NAME},
+      ZHZ_NAME = #{ZHZ_NAME},
+      GROUP_TYPE = #{GROUP_TYPE},
+      RPT_DATE = #{RPT_DATE},
+      RPT_WEEK = #{RPT_WEEK},
+      CXCK_SCORE = #{CXCK_SCORE},
+      CXCK_JZ = #{CXCK_JZ},
+      YXT_SCORE = #{YXT_SCORE},
+      YXT_JZ = #{YXT_JZ},
+      BXDL_SCORE = #{BXDL_SCORE},
+      BXDL_JZ = #{BXDL_JZ},
+      GRLC_SCORE = #{GRLC_SCORE},
+      GRLC_JZ = #{GRLC_JZ},
+      GJS_SCORE = #{GJS_SCORE},
+      GJS_JZ = #{GJS_JZ},
+      HJDT_SCORE = #{HJDT_SCORE},
+      HJDT_JZ = #{HJDT_JZ},
+      JJDT_SCORE = #{JJDT_SCORE},
+      JJDT_JZ = #{JJDT_JZ},
+      SJYH_KHXZ_SCORE = #{SJYH_KHXZ_SCORE},
+      SJYH_KHXZ_JZ = #{SJYH_KHXZ_JZ},
+      XYK_XZFKL_SCORE = #{XYK_XZFKL_SCORE},
+      XYK_XZFKL_JZ = #{XYK_XZFKL_JZ},
+      GSCK_SCORE = #{GSCK_SCORE},
+      GSCK_JZ = #{GSCK_JZ},
+      TOTAL_SCORE = #{TOTAL_SCORE},
+      RANK = #{RANK},
+      SEQ = #{SEQ},
+      WLJR_DZZF_SCORE = #{WLJR_DZZF_SCORE},
+      WLJR_DZZF_JZ = #{WLJR_DZZF_JZ}
+    where ID = #{ID}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap">
+    select ID, INST_ID, INST_NAME, UP_INST_ID, UP_INST_NAME, AREA_CD, AREA_NAME, ZHZ_NAME, 
+    GROUP_TYPE, RPT_DATE, RPT_WEEK, CXCK_SCORE, CXCK_JZ, YXT_SCORE, YXT_JZ, BXDL_SCORE, 
+    BXDL_JZ, GRLC_SCORE, GRLC_JZ, GJS_SCORE, GJS_JZ, HJDT_SCORE, HJDT_JZ, JJDT_SCORE, 
+    JJDT_JZ, SJYH_KHXZ_SCORE, SJYH_KHXZ_JZ, XYK_XZFKL_SCORE, XYK_XZFKL_JZ, GSCK_SCORE, 
+    GSCK_JZ, TOTAL_SCORE, RANK, SEQ, WLJR_DZZF_SCORE, WLJR_DZZF_JZ
+    from tb_kmh_ez_chk_rpt
+    where ID = #{ID}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select ID, INST_ID, INST_NAME, UP_INST_ID, UP_INST_NAME, AREA_CD, AREA_NAME, ZHZ_NAME, 
+    GROUP_TYPE, RPT_DATE, RPT_WEEK, CXCK_SCORE, CXCK_JZ, YXT_SCORE, YXT_JZ, BXDL_SCORE, 
+    BXDL_JZ, GRLC_SCORE, GRLC_JZ, GJS_SCORE, GJS_JZ, HJDT_SCORE, HJDT_JZ, JJDT_SCORE, 
+    JJDT_JZ, SJYH_KHXZ_SCORE, SJYH_KHXZ_JZ, XYK_XZFKL_SCORE, XYK_XZFKL_JZ, GSCK_SCORE, 
+    GSCK_JZ, TOTAL_SCORE, RANK, SEQ, WLJR_DZZF_SCORE, WLJR_DZZF_JZ
+    from tb_kmh_ez_chk_rpt
+  </select>
+</mapper>
